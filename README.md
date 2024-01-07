@@ -1,6 +1,6 @@
 # PomoBuddy
 
-<img src="https://github.com/vermenea/pomo-buddy/blob/master/public/webicon.png?raw=true" alt="Pomodoro Timer Logo" style="max-width: 100">
+<img src="https://github.com/vermenea/pomo-buddy/blob/master/public/webicon.png?raw=true" alt="Pomodoro Timer Logo" style="max-width: 100px">
 
 
 ## Overview
