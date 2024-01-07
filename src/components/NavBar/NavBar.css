@@ -1,6 +1,7 @@
 .navbar {
 	position: fixed;
 	width: 100%;
+	z-index: 500;
 }
 .nav-list {
 	display: flex;
@@ -11,9 +12,7 @@
 	background: rgba(255, 255, 255, 0);
 	border-radius: 16px;
 	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-	backdrop-filter: blur(8.7px);
-	-webkit-backdrop-filter: blur(8.7px);
-	border: 1px solid rgba(255, 255, 255, 0.14);
+	background-color: #fff;
 }
 .nav-item {
 	display: flex;
@@ -27,7 +26,7 @@
 	text-decoration: none;
 	font-weight: 500;
 	text-transform: uppercase;
-	color: #ec2c2c;
+	color: #161515;
 }
 .nav-item a:hover {
 	color: #6b6969;

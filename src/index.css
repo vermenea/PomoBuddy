@@ -10,15 +10,12 @@ html {
 	font-size: 62.5%;
 }
 
-body {
-	min-height: 100vh;
-	background-image: url('../public/background.png');
-	background-position: center;
-}
-
 .container {
 	display: grid;
 	place-items: center;
+	height: 100svh;
 	grid-template-columns: repeat(6, 1fr);
 	grid-template-rows: repeat(6, 1fr);
+	background-image: url('../public/background.png');
+	background-position: center;
 }
