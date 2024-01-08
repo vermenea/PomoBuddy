@@ -2,7 +2,7 @@ import { useState, useRef } from 'react';
 import './Timer.css';
 import ring from '../../../public/ring.mp3';
 export default function Timer() {
-	const [time, setTime] = useState('00:12');
+	const [time, setTime] = useState('25:00');
 	const [isRunning, setIsRunning] = useState(false);
 	const currentTime = useRef(null);
 	const audioRef = useRef(new Audio(ring));
