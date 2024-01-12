@@ -1,10 +1,11 @@
+
 .timer-box {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	grid-template-rows: repeat(3, 1fr);
 	grid-column: 3/5;
 	grid-row: 3/5;
-	min-width: max-content;
+	width: 350px;
 	padding: 5em;
 	margin: 1em;
 	background: rgba(255, 255, 255, 0.212);
@@ -23,7 +24,7 @@
 	font-weight: 700;
 	/* font-family: 'VT323', monospace; */
 	font-family: 'Oswald', sans-serif;
-	color: #ec2c2c;
+	color: #cf2828;
 }
 .startBtn {
 	grid-row: 3/4;
@@ -32,10 +33,30 @@
 	font-family: 'Oswald', sans-serif;
 	border: none;
 	border-radius: 12px;
+	background-color: #1e1c1c7d;
+	color: #ffff;
 	box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
 	cursor: pointer;
 	outline: none;
 	transition: 0.2s all;
+}
+.addstudy {
+	grid-row: 5/6;
+	grid-column: 3/5;
+	text-transform: uppercase;
+	font-family: 'Oswald', sans-serif;
+	font-size: 1.6rem;
+	border: none;
+	border-radius: 12px;
+	padding: 1em;
+	color: #ffff;
+	background-color: #1e1c1c7d;
+	box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+	cursor: pointer;
+	outline: none;
+}
+.tostudy:hover {
+	background-color: #0000007d;
 }
 .startBtn:active {
 	transform: scale(0.8);

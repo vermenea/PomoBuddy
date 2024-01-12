@@ -4,7 +4,7 @@ export default function Pomodoro() {
 		<section className="pomodoro-section">
 			<header>
 				<h1 id='pomodoro'>What is a pomodoro ?</h1>
-                <hr></hr>
+                <hr className='pomo-line'></hr>
                 </header>
 				<p className='text'>
 					The Pomodoro Technique is a time management method developed by

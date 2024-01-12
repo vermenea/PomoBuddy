@@ -1,10 +1,10 @@
-.pomodoro-section {
+.tostudy-section {
 	height: 100svh;
 	margin: 10em 5em;
 	background-color: #fff;
 	font-family: 'Oswald', sans-serif;
 }
-#pomodoro {
+#tostudy {
 	font-size: 3rem;
 	text-transform: uppercase;
 }
@@ -20,8 +20,8 @@
 .step {
 	list-style: number;
 }
-.pomo-line {
+.study-line {
 	width: 100px;
-	margin: 0 20em;
+	margin: 0 25em;
 	border: 1.5px solid red;
 }

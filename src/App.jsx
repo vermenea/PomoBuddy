@@ -5,6 +5,7 @@ import './index.css';
 import Timer from './components/Timer/Timer';
 import NavBar from './components/NavBar/NavBar';
 import Pomodoro from './components/Pomodoro/Pomodoro';
+import ToStudy from './components/ToStudy/ToStudy';
 
 function App() {
 	return (
@@ -12,6 +13,7 @@ function App() {
 			<NavBar />
 			<Timer />
 			<Pomodoro />
+			<ToStudy />
 		</>
 	);
 }

@@ -9,13 +9,16 @@
 html {
 	font-size: 62.5%;
 }
-
+body {
+	overflow-x: hidden;
+}
 .container {
 	display: grid;
 	place-items: center;
 	height: 100svh;
 	grid-template-columns: repeat(6, 1fr);
 	grid-template-rows: repeat(6, 1fr);
-	background-image: url('../public/background.png');
+	background-image: url('../public/bcg.png');
 	background-position: center;
+	background-size: contain;
 }
