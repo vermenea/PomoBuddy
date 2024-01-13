@@ -15,7 +15,7 @@ function App() {
 			<NavBar />
 			<Timer />
 			<Pomodoro title='what is a pomodoro?' />
-			<ToStudy title='how to create a tostudy?' />
+			<ToStudy title='create a tostudy' />
 		</>
 	);
 }

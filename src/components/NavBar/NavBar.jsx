@@ -9,7 +9,7 @@ export default function NavBar() {
 					<h1>PomoBuddy</h1>
 				</li>
 				<li className='nav-item'>
-					<a href='#pomodoro'>what is pomodoro?</a>
+					<a href='#pomodoro'>pomodoro</a>
 				</li>
 				<li className='nav-item'>
 					<a href='#'>tostudy</a>
