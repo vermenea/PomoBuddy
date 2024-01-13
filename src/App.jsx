@@ -1,3 +1,5 @@
+// App.js
+
 import { useState } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
@@ -12,8 +14,8 @@ function App() {
 		<>
 			<NavBar />
 			<Timer />
-			<Pomodoro />
-			<ToStudy />
+			<Pomodoro title='what is a pomodoro?' />
+			<ToStudy title='how to create a tostudy?' />
 		</>
 	);
 }

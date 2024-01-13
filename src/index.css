@@ -15,7 +15,7 @@ body {
 .container {
 	display: grid;
 	place-items: center;
-	height: 100svh;
+	min-height: 100vh;
 	grid-template-columns: repeat(6, 1fr);
 	grid-template-rows: repeat(6, 1fr);
 	background-image: url('../public/bcg.png');

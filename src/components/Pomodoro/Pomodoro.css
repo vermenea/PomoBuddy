@@ -1,12 +1,17 @@
-.pomodoro-section {
-	height: 100svh;
-	margin: 10em 5em;
+.pomo-section {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	margin: 2em;
+	padding: 2em;
 	background-color: #fff;
 	font-family: 'Oswald', sans-serif;
 }
 #pomodoro {
+	width: 300px;
 	font-size: 3rem;
 	text-transform: uppercase;
+	border-bottom: 2px solid red;
 }
 .bold-text {
 	text-transform: uppercase;
@@ -15,13 +20,8 @@
 .text,
 .step {
 	font-size: 2rem;
-	margin: 2em;
+	margin: 1em;
 }
 .step {
 	list-style: number;
-}
-.pomo-line {
-	width: 100px;
-	margin: 0 20em;
-	border: 1.5px solid red;
 }
