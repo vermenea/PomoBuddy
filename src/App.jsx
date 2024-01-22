@@ -1,13 +1,8 @@
-// App.js
-
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
 import './index.css';
-import Timer from './components/Timer/Timer';
-import NavBar from './components/NavBar/NavBar';
-import Pomodoro from './components/Pomodoro/Pomodoro';
-import ToStudy from './components/ToStudy/ToStudy';
+import Timer from './components/Timer';
+import NavBar from './components/NavBar';
+import Pomodoro from './components/Pomodoro';
+import ToStudy from './components/ToStudy';
 
 function App() {
 	return (

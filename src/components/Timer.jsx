@@ -1,7 +1,6 @@
 import { useState, useRef } from 'react';
-import './Timer.css';
-import endSound from '../../../public/ring.mp3';
-import startSound from '../../../public/start.wav';
+import endSound from '../../public/ring.mp3';
+import startSound from '../../public/start.wav';
 
 export default function Timer() {
 	const [time, setTime] = useState('25:00');
@@ -51,17 +50,17 @@ export default function Timer() {
 
 	return (
 		<>
-			<div className='container' id='container'>
-				<div className='timer-box'>
-					<div className='time'>{time}</div>
+			<div id='container'>
+				<div>
+					<div>{time}</div>
 					<button
 						onClick={isRunning ? handleStop : handleStart}
-						className='startBtn'
+						
 					>
 						{isRunning ? 'stop' : 'start'}
 					</button>
 				</div>
-				<button className='addstudy'>create a new toStudy</button>
+				<button>create a new toStudy</button>
 			</div>
 		</>
 	);
