@@ -49,19 +49,22 @@ export default function Timer() {
 	}
 	return (
 		<>
-			<div className='container' id='container'>
-				<div className='timer-box grid grid-cols-4 grid-rows-3 col-start-3 col-end-5 row-start-3 row-end-5 w-350 p-20 m-4 bg-opacity-20 bg-white rounded-lg shadow-xl backdrop-filter backdrop-blur-5.8 border-1 border-opacity-30'>
-					<div className='time col-span-2 row-span-2 place-items-center text-6xl font-bold font-oswald text-red-600'>
+			<div
+				className='grid grid-rows-4 grid-cols-4 place-items-center bg-[background-img] bg-contain h-screen'
+				id='container'
+			>
+				<div className='flex flex-col items-center justify-evenly row-start-2 row-end-4 col-start-2 col-end-4 text-center bg-opacity-50 backdrop-blur-sm bg-white rounded-lg shadow-xl backdrop-filter backdrop-blur-6 border-1 border-opacity-30 w-full h-full'>
+					<div className='text-8xl font-bold font-oswald text-red-600'>
 						{time}
 					</div>
 					<button
 						onClick={isRunning ? handleStop : handleStart}
-						className='startBtn col-span-2 row-span-1 text-uppercase font-oswald border-none rounded-12 bg-opacity-70 text-white transition-all hover:bg-opacity-100 active:transform active:scale-80'
+						className='uppercase font-oswald border-none bg-slate-300 bg-opacity-70 transition-all hover:bg-opacity-100 shadow-lg rounded-md py-3 px-8'
 					>
 						{isRunning ? 'stop' : 'start'}
 					</button>
 				</div>
-				<button className='addstudy tostudy col-span-2 row-span-1 text-uppercase font-oswald text-1.6rem rounded-12 p-4 text-white bg-opacity-70 transition-all hover:bg-opacity-100 shadow-lg'>
+				<button className='row-start-4 row-end-5 col-start-2 col-end-4 uppercase font-oswald text-1.6rem rounded-12 p-4 bg-slate-300 bg-opacity-80 transition-all hover:bg-opacity-100 shadow-lg rounded-md'>
 					create a new toStudy
 				</button>
 			</div>

@@ -2,26 +2,26 @@ import React from 'react';
 import webicon from '../../public/webicon.png';
 
 const NavBar = () => {
-  return (
-    <nav className="navbar fixed w-full z-50">
-      <ul className="nav-list flex justify-center items-center flex-row font-oswald bg-white bg-opacity-0 rounded-lg shadow-md">
-        <li className="nav-item flex justify-center items-center list-none text-lg">
-          <img src={webicon} alt="Web Icon" className="webicon w-8" />
-          <h1 className="ml-2 font-bold">PomoBuddy</h1>
-        </li>
-        <li className="nav-item flex justify-center items-center list-none text-lg">
-          <a href="#pomodoro" className="nav-link">
-            Pomodoro
-          </a>
-        </li>
-        <li className="nav-item flex justify-center items-center list-none text-lg">
-          <a href="#" className="nav-link">
-            ToStudy
-          </a>
-        </li>
-      </ul>
-    </nav>
-  );
+	return (
+		<nav className='fixed top-0 w-full z-50 p-2 font-oswald bg-white rounded-lg shadow-md'>
+			<ul className='flex justify-center items-center flex-row '>
+				<li className='flex justify-center items-center list-none text-lg m-2'>
+					<img src={webicon} alt='Web Icon' className='webicon w-8' />
+					<h1 className='ml-2 font-bold'>PomoBuddy</h1>
+				</li>
+				<li className='flex justify-center items-center list-none text-lg m-2'>
+					<a href='#pomodoro' className='hover:text-gray-500'>
+						Pomodoro
+					</a>
+				</li>
+				<li className='flex justify-center items-center list-none text-lg m-2'>
+					<a href='#' className='hover:text-gray-500'>
+						ToStudy
+					</a>
+				</li>
+			</ul>
+		</nav>
+	);
 };
 
 export default NavBar;
