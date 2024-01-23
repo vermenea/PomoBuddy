@@ -59,12 +59,12 @@ export default function Timer() {
 					</div>
 					<button
 						onClick={isRunning ? handleStop : handleStart}
-						className='uppercase font-oswald border-none bg-gray-300 bg-opacity-90 transition-all hover:bg-opacity-100 shadow-lg rounded-md py-3 px-8'
+						className='uppercase font-oswald text-white border-none bg-zinc-800 bg-opacity-90 transition-all hover:bg-opacity-100 shadow-lg rounded-md py-3 px-8'
 					>
 						{isRunning ? 'stop' : 'start'}
 					</button>
 				</div>
-				<button className='row-start-4 row-end-5 col-start-2 col-end-4 uppercase font-oswald text-1.6rem rounded-12 p-4 bg-gray-300 bg-opacity-80 transition-all hover:bg-opacity-100 shadow-lg rounded-md'>
+				<button className='row-start-4 row-end-5 col-start-2 col-end-4 uppercase font-oswald text-white text-1.6rem rounded-12 p-4 bg-zinc-800 bg-opacity-80 transition-all hover:bg-opacity-100 shadow-lg rounded-md'>
 					create a new toStudy
 				</button>
 			</div>
