@@ -47,6 +47,13 @@ export default function Timer() {
 		clearInterval(currentTime.current);
 		currentTime.current = null;
 	}
+	function handleCreateToStudy() {
+		const toStudyElement = document.getElementById('tostudy');
+
+		if (toStudyElement) {
+			toStudyElement.scrollIntoView({ behavior: 'smooth' });
+		}
+	}
 	return (
 		<>
 			<div
@@ -54,7 +61,7 @@ export default function Timer() {
 				id='container'
 			>
 				<div className='flex flex-col items-center justify-evenly row-start-2 row-end-4 col-start-2 col-end-4 text-center bg-opacity-50 backdrop-blur-sm bg-white rounded-lg shadow-xl backdrop-filter backdrop-blur-6 border-1 border-opacity-30 w-full h-full'>
-					<div className='text-8xl font-bold font-oswald text-red-600'>
+					<div className='text-6xl lg:text-8xl font-bold font-oswald text-red-600'>
 						{time}
 					</div>
 					<button
@@ -64,7 +71,10 @@ export default function Timer() {
 						{isRunning ? 'stop' : 'start'}
 					</button>
 				</div>
-				<button className='row-start-4 row-end-5 col-start-2 col-end-4 uppercase font-oswald text-white text-1.6rem rounded-12 p-4 bg-zinc-800 bg-opacity-80 transition-all hover:bg-opacity-100 shadow-lg rounded-md'>
+				<button
+					className='row-start-4 row-end-5 col-start-2 col-end-4 uppercase font-oswald text-white text-1.6rem rounded-12 p-4 bg-zinc-800 bg-opacity-80 transition-all hover:bg-opacity-100 shadow-lg rounded-md'
+					onClick={handleCreateToStudy}
+				>
 					create a new toStudy
 				</button>
 			</div>
