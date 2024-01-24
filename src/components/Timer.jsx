@@ -60,8 +60,8 @@ export default function Timer() {
 				className='grid grid-rows-4 grid-cols-4 place-items-center bg-[background-img] bg-contain h-screen'
 				id='container'
 			>
-				<div className='flex flex-col items-center justify-evenly row-start-2 row-end-4 col-start-2 col-end-4 text-center bg-opacity-50 backdrop-blur-sm bg-white rounded-lg shadow-xl backdrop-filter backdrop-blur-6 border-1 border-opacity-30 w-full h-full'>
-					<div className='text-6xl lg:text-8xl font-bold font-oswald text-red-600'>
+				<div className='flex flex-col items-center justify-evenly row-start-2 row-end-4 col-start-2 col-end-4 text-center bg-opacity-50 backdrop-blur-sm bg-white rounded-lg shadow-xl backdrop-filter backdrop-blur-6 border-1 border-opacity-30 w-64 md:w-full lg:w-full h-64 md:h-full lg:h-full'>
+					<div className='text-6xl md:text-8xl lg:text-8xl font-bold font-oswald text-red-600'>
 						{time}
 					</div>
 					<button

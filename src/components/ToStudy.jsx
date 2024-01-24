@@ -10,7 +10,7 @@ export default function ToStudy({ title }) {
 			</p>
 
 
-			<div className='flex flex-col justify-start mt-4 border-4 w-6/12 rounded-md text-xl'>
+			<div className='flex flex-col justify-start mt-4 border-4 w-full lg:w-6/12 rounded-md text-xl'>
 				<input type='text'placeholder="Type here..." className='w-inherit m-5  overflow-hidden'></input>
 				<div className="flex m-5">
 				<p>Estimated pomodoros:</p><input type="number" className="w-12 mr-2 text-right text-red-500"></input>
