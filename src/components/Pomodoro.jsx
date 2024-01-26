@@ -39,7 +39,7 @@ const Pomodoro = ({ title }) => {
 					</p>
 				</div>
 
-				<img src='public/studying.jpg' className='max-w-sm'></img>
+				<img src='../../public/studying.jpg' className='max-w-sm'></img>
 			</div>
 
 			<ol className='mt-10 text-xl  list-decimal'>
