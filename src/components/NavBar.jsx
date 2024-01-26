@@ -10,18 +10,12 @@ const NavBar = () => {
 					<h1 className='ml-2 font-bold'>PomoBuddy</h1>
 				</li>
 				<li className='flex justify-center items-center list-none text-lg m-2'>
-					<a
-						href='#pomodoro'
-						className='hover:text-gray-500'
-					>
+					<a href='#pomodoro' className='hover:text-gray-500'>
 						Pomodoro
 					</a>
 				</li>
 				<li className='flex justify-center items-center list-none text-lg m-2'>
-					<a
-						href='#tostudy'
-						className='hover:text-gray-500'
-					>
+					<a href='#tostudy' className='hover:text-gray-500'>
 						ToStudy
 					</a>
 				</li>
