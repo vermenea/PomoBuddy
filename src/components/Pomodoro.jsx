@@ -1,4 +1,5 @@
 import React from 'react';
+import studyImg from '../../public/studying.jpg';
 
 const Pomodoro = ({ title }) => {
 	return (
@@ -21,7 +22,13 @@ const Pomodoro = ({ title }) => {
 			<div className='flex justify-center align-center'>
 				<div>
 					<p className='text text-xl mt-10'>
-						It's effectiveness lies in principles like <span className='text-red-600'> managing cognitive load, leveraging flow psychology, and aligning with ultradian rhythms.</span> Breaking work into focused intervals with short breaks helps prevent
+						It's effectiveness lies in principles like{' '}
+						<span className='text-red-600'>
+							{' '}
+							managing cognitive load, leveraging flow psychology, and aligning
+							with ultradian rhythms.
+						</span>{' '}
+						Breaking work into focused intervals with short breaks helps prevent
 						mental fatigue, enhances concentration, and aligns with the
 						psychological concept of flow. The method also encourages task
 						chunking and goal setting, making it a practical approach to time
@@ -39,7 +46,7 @@ const Pomodoro = ({ title }) => {
 					</p>
 				</div>
 
-				<img src='../../public/studying.jpg' className='max-w-sm'></img>
+				<img src={studyImg} className='max-w-sm'></img>
 			</div>
 
 			<ol className='mt-10 text-xl  list-decimal'>
