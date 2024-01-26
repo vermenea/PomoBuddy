@@ -10,7 +10,7 @@ The Pomodoro Timer App is a productivity tool designed to help individuals manag
 - **Pomodoro Timer**: Set Pomodoro sessions to focus on specific tasks.
 - **Short and Long Breaks**: soon
 - **Customizable Settings**: soon
-- **Task Tracking**: soon
+- **Task Tracking**: create a toStudy and set estimated pomodoros that you will need to finish a study set
 - **Statistics**: soon
   
 ## Technologies Used
