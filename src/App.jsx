@@ -7,13 +7,13 @@ import Footer from './components/Footer';
 
 function App() {
 	return (
-		<>
+		<div className='overflow-hidden'>
 			<NavBar />
 			<Timer />
 			<Pomodoro title='what is a pomodoro?' />
 			<ToStudy title='create a tostudy' />
 			<Footer/>
-		</>
+		</div>
 	);
 }
 

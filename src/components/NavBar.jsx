@@ -7,7 +7,9 @@ const NavBar = () => {
 			<ul className='flex justify-center items-center flex-row '>
 				<li className='flex justify-center items-center list-none text-lg m-2'>
 					<img src={webicon} alt='Web Icon' className='webicon w-8' />
-					<h1 className='ml-2 font-bold'>PomoBuddy</h1>
+					<a href='#' className='ml-2 font-bold'>
+						PomoBuddy
+					</a>
 				</li>
 				<li className='flex justify-center items-center list-none text-lg m-2'>
 					<a href='#pomodoro' className='hover:text-gray-500'>

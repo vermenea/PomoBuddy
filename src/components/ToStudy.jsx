@@ -31,7 +31,7 @@ export default function ToStudy({ title }) {
 		});
 	}
 	return (
-		<section className='font-oswald my-40 mx-20'>
+		<section className='font-oswald my-20 mx-20 md:mx-40 lg:mx-60'>
 			<header className='text-3xl uppercase font-bold'>
 				<h1 id='tostudy'>{title}</h1>
 			</header>

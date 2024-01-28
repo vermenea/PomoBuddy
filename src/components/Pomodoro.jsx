@@ -1,9 +1,10 @@
 import React from 'react';
 import studyImg from '../../public/studying.jpg';
+import studyImgTwo from '../../public/studying2.jpg';
 
 const Pomodoro = ({ title }) => {
 	return (
-		<section id='pomodoro' className='font-oswald my-20 mx-20 scroll-smooth'>
+		<section id='pomodoro' className='font-oswald my-20 mx-20 md:mx-40 lg:mx-60 scroll-smooth'>
 			<header>
 				<h1 className='text-3xl uppercase font-bold'>{title}</h1>
 			</header>
@@ -19,8 +20,8 @@ const Pomodoro = ({ title }) => {
 			<h2 className='mt-40 bold-text font-bold text-3xl uppercase'>
 				science behind pomodoro technique
 			</h2>
-			<div className='flex justify-center align-center'>
-				<div>
+			<div className='flex flex-col md:flex-row justify-center align-center'>
+				<div className='flex flex-col justify-around md:mr-5'>
 					<p className='text text-xl mt-10'>
 						It's effectiveness lies in principles like{' '}
 						<span className='text-red-600'>
@@ -35,7 +36,14 @@ const Pomodoro = ({ title }) => {
 						management based on well-established principles from cognitive
 						psychology and productivity research.
 					</p>
-					<p className='text text-xl mt-10'>
+					<div className='flex w-full'>
+					<img
+						src={studyImg}
+						className='md:max-w-sm lg:max-w-lg mt-5 md:mt-0'
+						alt='Student is studing on his laptop and is surounded with books'
+					></img>
+					</div>
+					<p className='text text-xl md:text-right mt-10'>
 						The capacity for sustained focus, known as
 						<span className='text-red-600'> attention span</span>, is crucial
 						for concentrating on a single task. Research suggests this
@@ -44,9 +52,15 @@ const Pomodoro = ({ title }) => {
 						it is also feasible to reestablish focus by rejuvenating the
 						attention span, as indicated in a recent study.
 					</p>
+					<div className='flex justify-end w-full'>
+					<img
+						src={studyImgTwo}
+						className='md:max-w-sm lg:max-w-lg mt-5 md:mt-0'
+						alt='Student is studing on his laptop and is surounded with books'
+					></img>
+					</div>
+					
 				</div>
-
-				<img src={studyImg} className='max-w-sm'></img>
 			</div>
 
 			<ol className='mt-10 text-xl  list-decimal'>
