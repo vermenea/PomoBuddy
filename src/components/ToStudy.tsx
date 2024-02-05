@@ -1,12 +1,12 @@
 import { ChangeEvent, useState } from 'react';
-import { ToStudyProps } from './Pomodoro';
+
 
 interface ToStudyValue {
 	value: string;
 	pomodoros: number;
 }
 
-export default function ToStudy({ title }: ToStudyProps) {
+export default function ToStudy() {
 	const [toStudyValue, setToStudyValue] = useState<string>('');
 	const [estimatedPomodoros, setEstimatedPomodoros] = useState<number>(1);
 	const [submittedToStudyValue, setSubmittedToStudyValue] = useState<
@@ -45,7 +45,7 @@ export default function ToStudy({ title }: ToStudyProps) {
 	return (
 		<section className='font-oswald my-20 mx-20 md:mx-40 lg:mx-60'>
 			<header className='text-3xl uppercase font-bold'>
-				<h1 id='tostudy'>{title}</h1>
+				<h1 id='tostudy'>create a tostudy</h1>
 			</header>
 			<p className='mt-10 text-xl'>
 				To plan your study session, add a new toStudy to the list, set estimated

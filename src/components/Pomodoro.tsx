@@ -1,18 +1,14 @@
 import studyImg from '../../public/studying.jpg';
 import studyImgTwo from '../../public/studying2.jpg';
 
-export interface ToStudyProps {
-	title: string;
-}
-
-const Pomodoro = ({ title }: ToStudyProps) => {
+const Pomodoro = () => {
 	return (
 		<section
 			id='pomodoro'
 			className='font-oswald my-20 mx-20 md:mx-40 lg:mx-60 scroll-smooth'
 		>
 			<header>
-				<h1 className='text-3xl uppercase font-bold'>{title}</h1>
+				<h1 className='text-3xl uppercase font-bold'>what is a pomodoro?</h1>
 			</header>
 			<p className='text text-xl mt-10'>
 				The Pomodoro Technique is a time management method developed by

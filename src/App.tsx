@@ -9,8 +9,8 @@ function App() {
 		<div className='overflow-hidden'>
 			<NavBar />
 			<Timer />
-			<Pomodoro title='what is a pomodoro?' />
-			<ToStudy title='create a tostudy' />
+			<Pomodoro />
+			<ToStudy />
 			<Footer />
 		</div>
 	);
