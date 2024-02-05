@@ -1,10 +1,16 @@
-import React from 'react';
 import studyImg from '../../public/studying.jpg';
 import studyImgTwo from '../../public/studying2.jpg';
 
-const Pomodoro = ({ title }) => {
+export interface ToStudyProps {
+	title: string;
+}
+
+const Pomodoro = ({ title }: ToStudyProps) => {
 	return (
-		<section id='pomodoro' className='font-oswald my-20 mx-20 md:mx-40 lg:mx-60 scroll-smooth'>
+		<section
+			id='pomodoro'
+			className='font-oswald my-20 mx-20 md:mx-40 lg:mx-60 scroll-smooth'
+		>
 			<header>
 				<h1 className='text-3xl uppercase font-bold'>{title}</h1>
 			</header>
@@ -37,11 +43,11 @@ const Pomodoro = ({ title }) => {
 						psychology and productivity research.
 					</p>
 					<div className='flex w-full'>
-					<img
-						src={studyImg}
-						className='md:max-w-sm lg:max-w-lg mt-5 md:mt-0'
-						alt='Student is studing on his laptop and is surounded with books'
-					></img>
+						<img
+							src={studyImg}
+							className='md:max-w-sm lg:max-w-lg mt-5 md:mt-0'
+							alt='Student is studing on his laptop and is surounded with books'
+						></img>
 					</div>
 					<p className='text text-xl md:text-right mt-10'>
 						The capacity for sustained focus, known as
@@ -53,13 +59,12 @@ const Pomodoro = ({ title }) => {
 						attention span, as indicated in a recent study.
 					</p>
 					<div className='flex justify-end w-full'>
-					<img
-						src={studyImgTwo}
-						className='md:max-w-sm lg:max-w-lg mt-5 md:mt-0'
-						alt='Student is studing on his laptop and is surounded with books'
-					></img>
+						<img
+							src={studyImgTwo}
+							className='md:max-w-sm lg:max-w-lg mt-5 md:mt-0'
+							alt='Student is studing on his laptop and is surounded with books'
+						></img>
 					</div>
-					
 				</div>
 			</div>
 

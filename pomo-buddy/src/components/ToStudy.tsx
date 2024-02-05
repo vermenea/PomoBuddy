@@ -1,43 +1,55 @@
-import { useState } from 'react';
+import { ChangeEvent, useState } from 'react';
+import { ToStudyProps } from './Pomodoro';
 
-export default function ToStudy({ title }) {
-	const [toStudyValue, setToStudyValue] = useState('');
-	const [estimatedPomodoros, setEstimatedPomodoros] = useState(1);
-	const [submittedtoStudyValue, setSubmittedToStudyValue] = useState([]);
+interface ToStudyValue {
+	value: string;
+	pomodoros: number;
+}
 
-	function handleInput(e) {
+export default function ToStudy({ title }: ToStudyProps) {
+	const [toStudyValue, setToStudyValue] = useState<string>('');
+	const [estimatedPomodoros, setEstimatedPomodoros] = useState<number>(1);
+	const [submittedToStudyValue, setSubmittedToStudyValue] = useState<
+		ToStudyValue[]
+	>([]);
+
+	const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
 		setToStudyValue(e.target.value);
-	}
-	function handleEstimatedPomodorosChange(e) {
+	};
+
+	const handleEstimatedPomodorosChange = (e: ChangeEvent<HTMLInputElement>) => {
 		setEstimatedPomodoros(parseInt(e.target.value, 10) || 1);
-	}
-	function handleSubmit() {
+	};
+
+	const handleSubmit = () => {
 		if (toStudyValue.trim() !== '') {
-			const newToStudy = {
+			const newToStudy: ToStudyValue = {
 				value: toStudyValue,
 				pomodoros: estimatedPomodoros,
 			};
 
-			setSubmittedToStudyValue([...submittedtoStudyValue, newToStudy]);
+			setSubmittedToStudyValue([...submittedToStudyValue, newToStudy]);
 		}
 		setToStudyValue('');
 		setEstimatedPomodoros(1);
-	}
-	function handleCheckboxChange(index) {
+	};
+
+	const handleCheckboxChange = (index: number) => {
 		setSubmittedToStudyValue((prevToStudyValues) => {
 			const updatedToStudyValues = [...prevToStudyValues];
 			updatedToStudyValues.splice(index, 1);
 			return updatedToStudyValues;
 		});
-	}
+	};
+
 	return (
 		<section className='font-oswald my-20 mx-20 md:mx-40 lg:mx-60'>
 			<header className='text-3xl uppercase font-bold'>
 				<h1 id='tostudy'>{title}</h1>
 			</header>
 			<p className='mt-10 text-xl'>
-				To plan your study session add a new toStudy to the list, set estimated
-				pomodoros that you need to set for study set. Mark ✅ if it's done.
+				To plan your study session, add a new toStudy to the list, set estimated
+				pomodoros that you need to set for study, and mark ✅ if it's done.
 			</p>
 
 			<div className='flex flex-col justify-start mt-10 border-4 w-full lg:w-6/12 rounded-md text-xl'>
@@ -60,19 +72,17 @@ export default function ToStudy({ title }) {
 
 				<hr className='border-2'></hr>
 				<ul className='flex flex-col align-center m-8 '>
-					{submittedtoStudyValue.map((toStudy, index) => (
-						<>
-							<li className='flex items-center m-2' key={index}>
-								{toStudy.value} ➡️ {toStudy.pomodoros} pomodoros
-								<button
-									type='checkbox'
-									className='ml-auto'
-									onClick={() => handleCheckboxChange(index)}
-								>
-									✅
-								</button>
-							</li>
-						</>
+					{submittedToStudyValue.map((toStudy, index) => (
+						<li className='flex items-center m-2' key={index}>
+							{toStudy.value} ➡️ {toStudy.pomodoros} pomodoros
+							<button
+								type='button' // Explicitly specify button type
+								className='ml-auto'
+								onClick={() => handleCheckboxChange(index)}
+							>
+								✅
+							</button>
+						</li>
 					))}
 				</ul>
 				<button
