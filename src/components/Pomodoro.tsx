@@ -1,8 +1,11 @@
-import React from 'react';
 import studyImg from '../../public/studying.jpg';
 import studyImgTwo from '../../public/studying2.jpg';
 
-const Pomodoro = ({ title }) => {
+export interface ToStudyProps {
+	title: string;
+}
+
+const Pomodoro = ({ title }: ToStudyProps) => {
 	return (
 		<section id='pomodoro' className='font-oswald my-20 mx-20 md:mx-40 lg:mx-60 scroll-smooth'>
 			<header>

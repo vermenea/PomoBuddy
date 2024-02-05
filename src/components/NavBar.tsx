@@ -1,4 +1,3 @@
-import React from 'react';
 import webicon from '../../public/webicon.png';
 
 const NavBar = () => {
