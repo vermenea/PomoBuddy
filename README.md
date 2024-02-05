@@ -15,9 +15,9 @@ The Pomodoro Timer App is a productivity tool designed to help individuals manag
   
 ## Technologies Used
 
-- HTML5, Tailwind CSS, JavaScript
-- [React](https://reactjs.org/) for the user interface
-- [LocalStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) for data persistence  soon
+- HTML5, Tailwind CSS, Typescript
+- React for the user interface
+- LocalStorage for data persistence  soon
 
 
 
