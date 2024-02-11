@@ -11,13 +11,15 @@ The Pomodoro Timer App is a productivity tool designed to help individuals manag
 - **Short and Long Breaks**: Set short or long break between each study set
 - **Customizable Settings**: soon
 - **Task Tracking**: Add task to toStudy to see what you have to acomplish next
-- **Statistics**: soon
+- **Music**: soon
   
 ## Technologies Used
 
-- HTML5, Tailwind CSS, Typescript
-- React for the user interface
-- LocalStorage for data persistence  soon
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=react,ts,tailwind,git,vite" />
+  </a>
+</p>
 
 
 
