@@ -15,7 +15,7 @@ The Pomodoro Timer App is a productivity tool designed to help individuals manag
   
 ## Technologies Used
 
-<p align="center">
+<p align="left">
   <a href="https://skillicons.dev">
     <img src="https://skillicons.dev/icons?i=react,ts,tailwind,git,vite" />
   </a>
