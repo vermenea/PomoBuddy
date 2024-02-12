@@ -30,6 +30,10 @@ export default function Timer() {
         setIsRunning(false)
         clearInterval(intervalIdRef.current as NodeJS.Timeout)
         return '25:00'
+      } else if (prevTime === '25:00') {
+        setTime('05:00')
+      } else if (prevTime === '05:00') {
+        setTime('25:00')
       }
 
       seconds = 59
