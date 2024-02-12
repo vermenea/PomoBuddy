@@ -21,6 +21,6 @@ The Pomodoro Timer App is a productivity tool designed to help individuals manag
   </a>
 </p>
 
-
+Hey ! App is still growing so there might be new features comming soon 🩷
 
 
