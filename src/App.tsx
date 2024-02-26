@@ -6,13 +6,13 @@ import ToStudy from './components/ToStudy'
 import Footer from './components/Footer'
 function App() {
   return (
-    <div className="overflow-hidden">
-      <NavBar />
+    <main className="overflow-hidden">
+      <NavBar href={''} text={''} />
       <Timer />
       <Pomodoro />
       <ToStudy />
       <Footer />
-    </div>
+    </main>
   )
 }
 

@@ -31,6 +31,10 @@ export default function Timer() {
         setIsRunning(false)
         clearInterval(intervalIdRef.current as NodeJS.Timeout)
         return '25:00'
+      } else if (prevTime === '25:00') {
+        setTime('05:00')
+      } else if (prevTime === '05:00') {
+        setTime('25:00')
       }
 
       seconds = 59
@@ -51,6 +55,16 @@ export default function Timer() {
     clearInterval(intervalIdRef.current as NodeJS.Timeout)
     intervalIdRef.current = null
   }
+  function handleReturnTime() {
+    setTime('25:00')
+  }
+
+  function handleShortBreak() {
+    setTime('05:00')
+  }
+  function handleLongBreak() {
+    setTime('15:00')
+  }
 
   return (
     <>
@@ -58,13 +72,13 @@ export default function Timer() {
         className="grid grid-rows-4 grid-cols-4 place-items-center bg-[background-img] bg-contain h-screen"
         id="container"
       >
-        <div className="flex flex-col items-center justify-evenly row-start-2 row-end-4 col-start-2 col-end-4 text-center bg-opacity-50 backdrop-blur-sm bg-white rounded-lg shadow-xl backdrop-filter backdrop-blur-6 border-1 border-opacity-30 w-64 md:w-full xl:w-1/2 lg:w-1/2 md:h-full lg:h-full max-h-96 p-10">
+        <div className="flex flex-col items-center justify-evenly row-start-2 row-end-4 col-start-2 col-end-4 text-center bg-opacity-50 backdrop-blur-sm bg-white rounded-lg shadow-xl backdrop-filter backdrop-blur-6 border-1 border-opacity-30 w-64 md:w-full lg:w-full md:h-full lg:h-full max-h-96 p-10">
           <div className="text-6xl md:text-8xl lg:text-8xl font-bold font-oswald text-red-600 p-5">
             {time}
           </div>
           <button
             onClick={isRunning ? handleStop : handleStart}
-            className="uppercase font-oswald text-white border-none bg-zinc-800 bg-opacity-90 transition-all hover:bg-opacity-100 shadow-lg rounded-md py-3 px-8"
+            className="uppercase font-oswald text-white border-none bg-zinc-800 bg-opacity-90 transition-all hover:bg-opacity-100 shadow-lg rounded-md py-2 px-6"
           >
             {isRunning ? 'stop' : 'start'}
           </button>
