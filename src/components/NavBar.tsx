@@ -1,25 +1,20 @@
-import webicon from '../../public/webicon.png'
+import React from 'react'
+import WebIcon from './WebIcon'
+import NavItem from './NavItem'
 
-const NavBar = () => {
+interface NavItemProps {
+  href: string
+  text: string
+  icon?: React.ReactNode
+}
+
+const NavBar: React.FC<NavItemProps> = () => {
   return (
     <nav className="fixed top-0 w-full z-50 p-2 font-oswald bg-white rounded-lg shadow-md">
       <ul className="flex justify-center items-center flex-row ">
-        <li className="flex justify-center items-center list-none text-lg m-2">
-          <img src={webicon} alt="Web Icon" className="webicon w-8" />
-          <a href="#" className="ml-2 font-bold">
-            PomoBuddy
-          </a>
-        </li>
-        <li className="flex justify-center items-center list-none text-lg m-2">
-          <a href="#pomodoro" className="hover:text-gray-500">
-            Pomodoro
-          </a>
-        </li>
-        <li className="flex justify-center items-center list-none text-lg m-2">
-          <a href="#tostudy" className="hover:text-gray-500">
-            ToStudy
-          </a>
-        </li>
+        <NavItem href="#" text="PomoBuddy" icon={<WebIcon />} />
+        <NavItem href="#pomodoro" text="Pomodoro" />
+        <NavItem href="#tostudy" text="ToStudy" />
       </ul>
     </nav>
   )

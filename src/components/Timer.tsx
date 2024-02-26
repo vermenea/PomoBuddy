@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react'
 import endSound from '../../public/ring.mp3'
 import startSound from '../../public/start.wav'
+import CreateToStudyButton from './BlackButton'
 
 export default function Timer() {
   const [time, setTime] = useState<string>('25:00')
@@ -57,7 +58,7 @@ export default function Timer() {
         className="grid grid-rows-4 grid-cols-4 place-items-center bg-[background-img] bg-contain h-screen"
         id="container"
       >
-        <div className="flex flex-col items-center justify-evenly row-start-2 row-end-4 col-start-2 col-end-4 text-center bg-opacity-50 backdrop-blur-sm bg-white rounded-lg shadow-xl backdrop-filter backdrop-blur-6 border-1 border-opacity-30 w-64 md:w-full lg:w-full md:h-full lg:h-full max-h-96 p-10">
+        <div className="flex flex-col items-center justify-evenly row-start-2 row-end-4 col-start-2 col-end-4 text-center bg-opacity-50 backdrop-blur-sm bg-white rounded-lg shadow-xl backdrop-filter backdrop-blur-6 border-1 border-opacity-30 w-64 md:w-full xl:w-1/2 lg:w-1/2 md:h-full lg:h-full max-h-96 p-10">
           <div className="text-6xl md:text-8xl lg:text-8xl font-bold font-oswald text-red-600 p-5">
             {time}
           </div>
@@ -68,19 +69,7 @@ export default function Timer() {
             {isRunning ? 'stop' : 'start'}
           </button>
         </div>
-        <a
-          onClick={(e) => {
-            e.preventDefault()
-            const toStudyElement = document.getElementById('tostudy')
-            toStudyElement?.scrollIntoView({
-              behavior: 'smooth',
-            })
-          }}
-          className="row-start-4 row-end-5 col-start-2 col-end-4 uppercase font-oswald text-white text-1.6rem rounded-12 p-4 bg-zinc-800 bg-opacity-80 transition-all hover:bg-opacity-100 shadow-lg rounded-md"
-          href="#tostudy"
-        >
-          create a new toStudy
-        </a>
+        <CreateToStudyButton/>
       </div>
     </>
   )
