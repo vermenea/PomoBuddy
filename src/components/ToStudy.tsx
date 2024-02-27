@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from 'react'
+import { ChangeEvent, useEffect, useState } from 'react'
 
 interface ToStudyValue {
   value: string
@@ -28,15 +28,31 @@ export default function ToStudy() {
       }
 
       setSubmittedToStudyValue([...submittedToStudyValue, newToStudy])
+      localStorage.setItem(
+        'savedToStudies',
+        JSON.stringify([...submittedToStudyValue, newToStudy]),
+      )
     }
     setToStudyValue('')
     setEstimatedPomodoros(1)
   }
 
+  useEffect(() => {
+    const savedToStudies = localStorage.getItem('savedToStudies')
+    if (savedToStudies !== null) {
+      const storedToStudies: ToStudyValue[] = JSON.parse(savedToStudies)
+      setSubmittedToStudyValue(storedToStudies)
+    }
+  }, [])
+
   const handleCheckboxChange = (index: number) => {
     setSubmittedToStudyValue((prevToStudyValues) => {
       const updatedToStudyValues = [...prevToStudyValues]
       updatedToStudyValues.splice(index, 1)
+      localStorage.setItem(
+        'savedToStudies',
+        JSON.stringify(updatedToStudyValues),
+      )
       return updatedToStudyValues
     })
   
