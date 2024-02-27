@@ -39,7 +39,7 @@ export default function ToStudy() {
       updatedToStudyValues.splice(index, 1)
       return updatedToStudyValues
     })
-  }
+  
 
   return (
     <section className="font-oswald max-w-4xl mx-auto p-10 md:px-16 lg:px-20 xl:px-20 scroll-smooth">
@@ -75,7 +75,7 @@ export default function ToStudy() {
             <li className="flex items-center m-2" key={index}>
               {toStudy.value} ➡️ {toStudy.pomodoros} pomodoros
               <button
-                type="button" // Explicitly specify button type
+                type="button"
                 className="ml-auto"
                 onClick={() => handleCheckboxChange(index)}
               >
