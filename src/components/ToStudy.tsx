@@ -59,7 +59,7 @@ const ToStudy: React.FC = () => {
 
   return (
     <section className="font-oswald max-w-4xl mx-auto p-10 md:px-16 lg:px-20 xl:px-20 scroll-smooth">
-      <header className="text-3xl uppercase font-bold">
+      <header className="mt-20 text-3xl uppercase font-bold">
         <h1 id="tostudy">create a tostudy</h1>
       </header>
       <p className="mt-20 text-xl">
