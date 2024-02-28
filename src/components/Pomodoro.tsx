@@ -5,7 +5,6 @@ import Step from './Step'
 import ImageComponent from './ImageComponent'
 import studyImg from '../../public/studying.jpg'
 import studyImgTwo from '../../public/studying2.jpg'
-import StepWithHeader from './StepWithHeader' // Import the StepWithHeader component
 
 const Pomodoro: React.FC = () => {
   return (
