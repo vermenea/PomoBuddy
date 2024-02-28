@@ -62,7 +62,7 @@ const Pomodoro: React.FC = () => {
       </div>
 
       <Header title="The basic steps of the Pomodoro Technique include:" />
-      <ol className="mt-20 text-xl list-decimal">
+      <ol className="mt-20 mb-20 text-xl list-decimal">
         <Step text="  Choose a task: Select a specific task or project that needs to be completed." />
         <Step text="Set the timer: Set a timer for 25 minutes, representing one Pomodoro. This time is dedicated solely to the chosen task." />
         <Step text="Work on the task: Focus completely on the task at hand until the timer rings. Avoid any distractions or interruptions during this period." />

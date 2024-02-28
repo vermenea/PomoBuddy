@@ -8,8 +8,9 @@ function App() {
     <main className="overflow-hidden">
       <NavBar href={''} text={''} />
       <Timer />
-      <Pomodoro />
       <ToStudy />
+      <Pomodoro />
+     
       <Footer />
     </main>
   )
