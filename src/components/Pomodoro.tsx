@@ -1,11 +1,13 @@
+import React from 'react'
 import Header from './Header'
 import TextComponent from './TextComponent'
 import Step from './Step'
 import ImageComponent from './ImageComponent'
 import studyImg from '../../public/studying.jpg'
 import studyImgTwo from '../../public/studying2.jpg'
+import StepWithHeader from './StepWithHeader' // Import the StepWithHeader component
 
-const Pomodoro = () => {
+const Pomodoro: React.FC = () => {
   return (
     <section
       id="pomodoro"
@@ -41,7 +43,7 @@ const Pomodoro = () => {
           <ImageComponent
             src={studyImg}
             alt="Student is studing on his laptop and is surounded with books"
-            align='right'
+            align="right"
           />
           <TextComponent>
             The capacity for sustained focus, known as
@@ -55,14 +57,14 @@ const Pomodoro = () => {
           <ImageComponent
             src={studyImgTwo}
             alt="Student is studing on his laptop and is surounded with books"
-            align='left'
+            align="left"
           />
         </div>
       </div>
 
-      <ol className="mt-10 text-xl list-decimal">
-        <Header title="The basic steps of the Pomodoro Technique include:" />
-        <Step text="Choose a task: Select a specific task or project that needs to be completed." />
+      <Header title="The basic steps of the Pomodoro Technique include:" />
+      <ol className="mt-20 text-xl list-decimal">
+        <Step text="  Choose a task: Select a specific task or project that needs to be completed." />
         <Step text="Set the timer: Set a timer for 25 minutes, representing one Pomodoro. This time is dedicated solely to the chosen task." />
         <Step text="Work on the task: Focus completely on the task at hand until the timer rings. Avoid any distractions or interruptions during this period." />
         <Step text="Take a short break: After completing a Pomodoro, take a 5-minute break to relax and recharge. Use this time to stretch, grab a snack, or take a short walk." />

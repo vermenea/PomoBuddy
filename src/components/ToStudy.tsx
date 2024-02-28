@@ -62,7 +62,7 @@ const ToStudy: React.FC = () => {
       <header className="text-3xl uppercase font-bold">
         <h1 id="tostudy">create a tostudy</h1>
       </header>
-      <p className="mt-10 text-xl">
+      <p className="mt-20 text-xl">
         To plan your study session, add a new toStudy to the list, set estimated
         pomodoros that you need to set for study, and mark ✅ if it's done.
       </p>

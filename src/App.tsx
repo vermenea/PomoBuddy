@@ -1,4 +1,3 @@
-import './index.css'
 import Timer from './components/Timer'
 import NavBar from './components/NavBar'
 import Pomodoro from './components/Pomodoro'
