@@ -41,6 +41,7 @@ const Pomodoro = () => {
           <ImageComponent
             src={studyImg}
             alt="Student is studing on his laptop and is surounded with books"
+            align='right'
           />
           <TextComponent>
             The capacity for sustained focus, known as
@@ -54,6 +55,7 @@ const Pomodoro = () => {
           <ImageComponent
             src={studyImgTwo}
             alt="Student is studing on his laptop and is surounded with books"
+            align='left'
           />
         </div>
       </div>
