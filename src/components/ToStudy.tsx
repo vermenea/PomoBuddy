@@ -1,5 +1,5 @@
-import { ChangeEvent, useEffect, useState } from 'react'
-
+import { ChangeEvent, useEffect, useState, useRef } from 'react'
+import { motion, useInView } from 'framer-motion'
 interface ToStudyValue {
   value: string
   pomodoros: number
@@ -11,6 +11,8 @@ const ToStudy: React.FC = () => {
   const [submittedToStudyValue, setSubmittedToStudyValue] = useState<
     ToStudyValue[]
   >([])
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true })
 
   const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
     setToStudyValue(e.target.value)
@@ -57,17 +59,44 @@ const ToStudy: React.FC = () => {
     })
   }
 
+  useEffect(() => {
+    console.log('Element is in view: ', isInView)
+  }, [isInView])
+
   return (
     <section className="font-oswald max-w-4xl mx-auto p-10 md:px-16 lg:px-20 xl:px-20 scroll-smooth">
-      <header className="mt-20 text-3xl uppercase font-bold">
+      <motion.header
+        className="mt-20 text-3xl uppercase font-bold"
+        ref={ref}
+        style={{
+          transform: isInView ? 'none' : 'translateX(-200px)',
+          opacity: isInView ? 1 : 0,
+          transition: '0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
+        }}
+      >
         <h1 id="tostudy">create a tostudy</h1>
-      </header>
-      <p className="mt-20 text-xl">
+      </motion.header>
+      <motion.p
+        className="mt-20 text-xl"
+        ref={ref}
+        style={{
+          transform: isInView ? 'none' : 'translateX(-200px)',
+          opacity: isInView ? 1 : 0,
+          transition: '0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
+        }}
+      >
         To plan your study session, add a new toStudy to the list, set estimated
         pomodoros that you need to set for study, and mark ✅ if it's done.
-      </p>
+      </motion.p>
 
-      <div className="flex flex-col justify-start mt-10 border-4 w-full  rounded-md text-xl">
+      <motion.div
+        className="flex flex-col justify-start mt-10 border-4 w-full  rounded-md text-xl"
+        ref={ref}
+        style={{
+          opacity: isInView ? 1 : 0,
+          transition: '2.5s',
+        }}
+      >
         <input
           type="text"
           placeholder="Type here..."
@@ -106,7 +135,7 @@ const ToStudy: React.FC = () => {
         >
           Add toStudy
         </button>
-      </div>
+      </motion.div>
     </section>
   )
 }

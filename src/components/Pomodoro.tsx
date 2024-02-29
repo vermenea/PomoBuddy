@@ -5,8 +5,17 @@ import Step from './Step'
 import ImageComponent from './ImageComponent'
 import studyImg from '../../public/studying.jpg'
 import studyImgTwo from '../../public/studying2.jpg'
+import { useEffect, useRef } from 'react'
+import { motion, useInView } from 'framer-motion'
 
 const Pomodoro: React.FC = () => {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true })
+
+  useEffect(() => {
+    console.log('Element is in view: ', isInView)
+  }, [isInView])
+
   return (
     <section
       id="pomodoro"
@@ -62,13 +71,21 @@ const Pomodoro: React.FC = () => {
       </div>
 
       <Header title="The basic steps of the Pomodoro Technique include:" />
-      <ol className="mt-20 mb-20 text-xl list-decimal">
+      <motion.ol
+        className="mt-20 mb-20 text-xl list-decimal"
+        ref={ref}
+        style={{
+          transform: isInView ? 'none' : 'translateX(-200px)',
+          opacity: isInView ? 1 : 0,
+          transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
+        }}
+      >
         <Step text="  Choose a task: Select a specific task or project that needs to be completed." />
         <Step text="Set the timer: Set a timer for 25 minutes, representing one Pomodoro. This time is dedicated solely to the chosen task." />
         <Step text="Work on the task: Focus completely on the task at hand until the timer rings. Avoid any distractions or interruptions during this period." />
         <Step text="Take a short break: After completing a Pomodoro, take a 5-minute break to relax and recharge. Use this time to stretch, grab a snack, or take a short walk." />
         <Step text="Repeat: Repeat the process with another Pomodoro. After completing four Pomodoros, take a longer break of 15-30 minutes." />
-      </ol>
+      </motion.ol>
     </section>
   )
 }
