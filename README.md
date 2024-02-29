@@ -47,6 +47,7 @@ A live demo of PomoBuddy is available [here](https://pomodoro-buddy.vercel.app).
 - Vite
 - LocalStorage
 - Firebase (coming soon)
+- Framer-motion (coming soon)
 
 ## Future Plans
 
@@ -55,6 +56,7 @@ PomoBuddy is still under development, and new features will be added in future u
 - Music integration to enhance focus during study sessions.
 - User authentication for personalized task tracking.
 - Additional study methods for different productivity techniques.
+- Animations - framer motion
 
 ## Contribution
 
