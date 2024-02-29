@@ -7,10 +7,12 @@ import studyImg from '../../public/studying.jpg'
 import studyImgTwo from '../../public/studying2.jpg'
 import { useEffect, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
+import { slideAnimation } from '../animations/animations'; 
 
 const Pomodoro: React.FC = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
+  const stepAnimation = slideAnimation(isInView); 
 
   useEffect(() => {
     console.log('Element is in view: ', isInView)
@@ -74,11 +76,7 @@ const Pomodoro: React.FC = () => {
       <motion.ol
         className="mt-20 mb-20 text-xl list-decimal"
         ref={ref}
-        style={{
-          transform: isInView ? 'none' : 'translateX(-200px)',
-          opacity: isInView ? 1 : 0,
-          transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
-        }}
+        style={stepAnimation}
       >
         <Step text="  Choose a task: Select a specific task or project that needs to be completed." />
         <Step text="Set the timer: Set a timer for 25 minutes, representing one Pomodoro. This time is dedicated solely to the chosen task." />
