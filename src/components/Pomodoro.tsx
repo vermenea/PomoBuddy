@@ -1,4 +1,3 @@
-import React from 'react'
 import Header from './Header'
 import TextComponent from './TextComponent'
 import Step from './Step'
@@ -7,12 +6,12 @@ import studyImg from '../../public/studying.jpg'
 import studyImgTwo from '../../public/studying2.jpg'
 import { useEffect, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { slideAnimation } from '../animations/animations'; 
+import { slideAnimation } from '../animations/animations'
 
 const Pomodoro: React.FC = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
-  const stepAnimation = slideAnimation(isInView); 
+  const stepAnimation = slideAnimation(isInView)
 
   useEffect(() => {
     console.log('Element is in view: ', isInView)

@@ -11,14 +11,13 @@ export default function Timer() {
   const intervalIdRef = useRef<NodeJS.Timeout | null>(null)
   const endAudioRef = useRef<HTMLAudioElement>(new Audio(endSound))
   const startAudioRef = useRef<HTMLAudioElement>(new Audio(startSound))
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true })
   const displayAnimation = displayContent(isInView)
 
   useEffect(() => {
     console.log('Element is in view: ', isInView)
   }, [isInView])
-
 
   useEffect(() => {
     if (isRunning) {
@@ -85,7 +84,11 @@ export default function Timer() {
         className="grid grid-rows-4 grid-cols-4 place-items-center bg-[background-img] bg-contain h-screen"
         id="container"
       >
-        <motion.div className="flex flex-col items-center justify-evenly row-start-2 row-end-4 col-start-2 col-end-4 text-center bg-opacity-50 backdrop-blur-sm bg-white rounded-lg shadow-xl backdrop-filter backdrop-blur-6 border-1 border-opacity-30 w-80 md:w-full lg:w-2/3 md:h-full lg:h-full max-h-96 p-10" ref={ref} style={displayAnimation}>
+        <motion.div
+          className="flex flex-col items-center justify-evenly row-start-2 row-end-4 col-start-2 col-end-4 text-center bg-opacity-50 backdrop-blur-sm bg-white rounded-lg shadow-xl backdrop-filter backdrop-blur-6 border-1 border-opacity-30 w-80 md:w-full lg:w-2/3 md:h-full lg:h-full max-h-96 p-10"
+          ref={ref}
+          style={displayAnimation}
+        >
           <div className="text-6xl md:text-8xl lg:text-8xl font-oswald text-red-600 p-5">
             <div className="flex justify-between text-xs">
               <button

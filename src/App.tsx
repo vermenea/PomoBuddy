@@ -5,14 +5,15 @@ import ToStudy from './components/ToStudy'
 import Footer from './components/Footer'
 function App() {
   return (
-    <main className="overflow-hidden">
-      <NavBar href={''} text={''} />
-      <Timer />
-      <ToStudy />
-      <Pomodoro />
-     
+    <>
+      <NavBar />
+      <main className="overflow-hidden">
+        <Timer />
+        <ToStudy />
+        <Pomodoro />
+      </main>
       <Footer />
-    </main>
+    </>
   )
 }
 
