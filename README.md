@@ -1,4 +1,4 @@
-# PomoBuddy <img src="https://github.com/vermenea/pomo-buddy/blob/master/public/webicon.ico?raw=true" alt="Pomodoro Timer Logo" width="30px">
+# PomoBuddy 🍅
 
 ## Overview
 
