@@ -1,70 +1,36 @@
-# PomoBuddy <img src="https://github.com/vermenea/pomo-buddy/blob/master/public/webicon.png?raw=true" alt="Pomodoro Timer Logo" width="30px">
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Overview
+## Getting Started
 
-PomoBuddy is a Pomodoro Timer App designed to help individuals manage their work time effectively using the Pomodoro Technique. The Pomodoro Technique is a time management method that breaks work into intervals, traditionally 25 minutes in length, separated by short breaks. This technique aims to improve focus and productivity.
+First, run the development server:
 
-## Why I made this?
-PomoBuddy serves a significant purpose for me and my college friends. As students, we often find ourselves overwhelmed with assignments, projects, and studying for exams. PomoBuddy emerged from our collective need for a tool that could help us manage our time more effectively and improve our productivity.
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-## Features
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-- **Pomodoro Timer**
-- **Short and Long Breaks**
-- **Task Tracking**
-- **Music**: (Coming Soon)
-- **Login**: (Coming Soon)
-- **Other Study Methods**: (Coming Soon)
-  
-## Installation
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-To run PomoBuddy locally, follow these steps:
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-1. Clone the repository: `git clone https://github.com/vermenea/pomo-buddy.git`
-2. Navigate to the project directory: `cd pomo-buddy`
-3. Install dependencies: `npm install`
-4. Run: `npm run dev`
+## Learn More
 
-## Usage
+To learn more about Next.js, take a look at the following resources:
 
-Once the app is running, you can:
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-- Set Pomodoro sessions by entering a task and clicking "Start".
-- Take short or long breaks between study sessions.
-- Track your tasks in the toStudy list.
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Live Demo
+## Deploy on Vercel
 
-A live demo of PomoBuddy is available [here](https://pomodoro-buddy.vercel.app).
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-
-## Technologies Used
-
-- React
-- TypeScript
-- Tailwind CSS
-- Git
-- Vite
-- LocalStorage
-- Firebase (coming soon)
-- Framer-motion (coming soon)
-
-## Future Plans
-
-PomoBuddy is still under development, and new features will be added in future updates:
-
-- Music integration to enhance focus during study sessions.
-- User authentication for personalized task tracking.
-- Additional study methods for different productivity techniques.
-- Animations - framer motion
-
-## Contribution
-
-Contributions to PomoBuddy are welcome! To contribute, please follow these guidelines:
-- Open an issue to report bugs or suggest features.
-- Fork the repository and create a pull request with your changes.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
