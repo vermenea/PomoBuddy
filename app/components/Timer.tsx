@@ -10,8 +10,8 @@ export default function Timer() {
 	const [time, setTime] = useState<string>('25:00');
 	const [isRunning, setIsRunning] = useState<boolean>(false);
 	const intervalIdRef = useRef<NodeJS.Timeout | null>(null);
-	const endAudioRef = useRef<HTMLAudioElement>(new Audio('/ring.mp3'));
-	const startAudioRef = useRef<HTMLAudioElement>(new Audio('/start.wav'));
+	// const endAudioRef = useRef<HTMLAudioElement>(new Audio('/ring.mp3'));
+	// const startAudioRef = useRef<HTMLAudioElement>(new Audio('/start.wav'));
 	const ref = useRef(null);
 	const isInView = useInView(ref, { once: true });
 	const displayAnimation = displayContent(isInView);
@@ -30,7 +30,7 @@ export default function Timer() {
 
 	function handleStart() {
 		setIsRunning(true);
-		startAudioRef.current.play();
+		// startAudioRef.current.play();
 
 		const intervalId = setInterval(() => {
 			setTime((prevTime: string) => calculateTime(prevTime));
@@ -55,7 +55,7 @@ export default function Timer() {
 		}
 
 		if (minutes === 0 && seconds === 6) {
-			endAudioRef.current.play();
+			// endAudioRef.current.play();
 		}
 
 		return `${minutes.toString().padStart(2, '0')}:${seconds
