@@ -35,7 +35,7 @@ Once the app is running, you can:
 
 ## Live Demo
 
-A live demo of PomoBuddy is available [here]([https://your-pomo-buddy.vercel.app/]).
+A live demo of PomoBuddy is available [here](https://your-pomo-buddy.vercel.app/).
 Although due to developement it's not always working:3
 
 ## Technologies Used
