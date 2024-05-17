@@ -1,4 +1,4 @@
-# PomoBuddy <img src="https://github.com/vermenea/pomo-buddy/blob/master/public/webicon.png?raw=true" alt="Pomodoro Timer Logo" width="30px">
+# PomoBuddy 🍅
 
 ## Overview
 
@@ -35,7 +35,7 @@ Once the app is running, you can:
 
 ## Live Demo
 
-A live demo of PomoBuddy is available [here](https://pomodoro-buddy.vercel.app).
+A live demo of PomoBuddy is available [here](https://your-pomo-buddy.vercel.app/).
 Although due to developement it's not always working:3
 
 ## Technologies Used
