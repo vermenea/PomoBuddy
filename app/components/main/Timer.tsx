@@ -3,8 +3,8 @@ import { useState, useRef, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 // import endSound from '../public/ring.mp3';
 // import startSound from '../public/start.wav';
-import BlackButton from './BlackButton';
-import { displayContent } from '../animations/animations';
+import BlackButton from './CreateToStudyButton';
+import { displayContent } from '../../animations/animations';
 
 export default function Timer() {
 	const [time, setTime] = useState<string>('25:00');

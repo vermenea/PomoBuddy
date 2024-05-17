@@ -1,13 +1,13 @@
 'use client';
 import Header from './Header';
-import TextComponent from './TextComponent';
+import TextComponent from '../main/TextComponent';
 import Step from './Step';
-import ImageComponent from './ImageComponent';
-import studyImg from '../studying.jpg';
-import studyImgTwo from '../studying2.jpg';
+import ImageComponent from '../main/ImageComponent';
+import studyImg from '../../../public/images/studying.jpg';
+import studyImgTwo from '../../../public/images/studying2.jpg';
 import { useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { slideAnimation } from '../animations/animations';
+import { slideAnimation } from '../../animations/animations';
 
 const Pomodoro: React.FC = () => {
 	const ref = useRef(null);

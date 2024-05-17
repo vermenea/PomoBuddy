@@ -9,7 +9,7 @@ const config: Config = {
 	theme: {
 		extend: {
 			backgroundImage: (theme) => ({
-				'[background-img]': "url('bcg.png')",
+				'[background-img]': "url('../../public/images/bcg.png')",
 			}),
 			fontFamily: {
 				vt323: ['VT323', 'monospace'],

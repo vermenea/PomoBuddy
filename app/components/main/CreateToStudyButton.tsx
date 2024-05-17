@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { displayContent } from '../animations/animations';
+import { displayContent } from '../../animations/animations';
 
 export default function CreateToStudyButton() {
 	const ref = useRef(null);

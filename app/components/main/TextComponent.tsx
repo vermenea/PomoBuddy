@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { slideAnimation } from '../animations/animations';
+import { slideAnimation } from '../../animations/animations';
 
 const TextComponent: React.FC<{ children: React.ReactNode }> = ({
 	children,

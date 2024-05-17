@@ -1,8 +1,8 @@
-import Timer from './components/Timer';
-import NavBar from './components/NavBar';
-import Pomodoro from './components/Pomodoro';
-import ToStudy from './components/ToStudy';
-import Footer from './components/Footer';
+import Timer from './components/main/Timer';
+import NavBar from './components/nav/NavBar';
+import Pomodoro from './components/main/Pomodoro';
+import ToStudy from './components/main/ToStudy';
+import Footer from './components/footer/Footer';
 function App() {
 	return (
 		<>
