@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { displayContent } from '../../animations/animations';
+import Image from 'next/image';
 
 type ImageProps = {
 	src: any;
@@ -23,13 +24,9 @@ const ImageComponent: React.FC<ImageProps> = ({ src, alt, align = 'left' }) => {
 			: 'md:max-w-sm lg:max-w-lg mt-10 md:mt-0';
 
 	return (
-		<motion.img
-			src={src}
-			className={classes}
-			alt={alt}
-			ref={ref}
-			style={displayAnimation}
-		/>
+		<motion.div ref={ref} style={displayAnimation}>
+			<Image src={src} className={classes} alt={alt} width={700} height={475} />
+		</motion.div>
 	);
 };
 

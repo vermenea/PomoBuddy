@@ -6,5 +6,5 @@ export const slideAnimation = (isInView: boolean) => ({
 
 export const displayContent = (isInView: boolean) => ({
   opacity: isInView ? 1 : 0,
-  transition: '0.5s',
+  transition: '1s',
 })
