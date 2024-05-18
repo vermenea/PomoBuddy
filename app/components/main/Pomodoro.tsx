@@ -38,7 +38,7 @@ const Pomodoro: React.FC = () => {
 				<div className='flex flex-col justify-around md:mr-5'>
 					<TextComponent>
 						It's effectiveness lies in principles like{' '}
-						<span className='text-red-600'>
+						<span className='text-red-500'>
 							{' '}
 							managing cognitive load, leveraging flow psychology, and aligning
 							with ultradian rhythms.
@@ -57,7 +57,7 @@ const Pomodoro: React.FC = () => {
 					/>
 					<TextComponent>
 						The capacity for sustained focus, known as
-						<span className='text-red-600'> attention span</span>, is crucial
+						<span className='text-red-500'> attention span</span>, is crucial
 						for concentrating on a single task. Research suggests this
 						concentration window typically spans around 20 minutes. While
 						distractions may naturally arise in the pursuit of new information,
