@@ -14,7 +14,7 @@ PomoBuddy serves a significant purpose for me and my college friends. As student
 - **Task Tracking**
 - **Music**: (Coming Soon)
 - **Login**: (Coming Soon)
-- **Other Study Methods**: (Coming Soon)
+- **Scientific resources**
   
 ## Installation
 
