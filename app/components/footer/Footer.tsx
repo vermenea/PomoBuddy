@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="flex justify-center align-center bg-slate-200 font-Oswald">
+    <footer className="flex justify-center align-center bg-slate-200 font-Oswald p-4">
       <p>
         coded by{' '}
         <a
