@@ -61,7 +61,3 @@ PomoBuddy is still under development, and new features will be added in future u
 Contributions to PomoBuddy are welcome! To contribute, please follow these guidelines:
 - Open an issue to report bugs or suggest features.
 - Fork the repository and create a pull request with your changes.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
