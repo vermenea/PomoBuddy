@@ -22,16 +22,27 @@ export default function Carousel() {
 	];
 
 	const [currentIndex, setCurrentIndex] = useState<number>(0);
+	const [leftArrowClicked, setLeftArrowClicked] = useState(false);
+	const [rightArrowClicked, setRightArrowClicked] = useState(false);
 
 	function showPrevVideo() {
-		setCurrentIndex((prevIndex) =>
-			prevIndex === 0 ? videos.length - 1 : prevIndex - 1
-		);
+		setLeftArrowClicked(true);
+		setTimeout(() => {
+			setLeftArrowClicked(false);
+			setCurrentIndex((prevIndex) =>
+				prevIndex === 0 ? videos.length - 1 : prevIndex - 1
+			);
+		}, 500); // Duration of the opacity animation
 	}
+
 	function showNextVideo() {
-		setCurrentIndex((prevIndex) =>
-			prevIndex === videos.length - 2 ? 0 : prevIndex + 1
-		);
+		setRightArrowClicked(true);
+		setTimeout(() => {
+			setRightArrowClicked(false);
+			setCurrentIndex((prevIndex) =>
+				prevIndex === videos.length - 1 ? 0 : prevIndex + 1
+			);
+		}, 500); // Duration of the opacity animation
 	}
 
 	return (
@@ -39,31 +50,35 @@ export default function Carousel() {
 			<motion.div
 				ref={ref}
 				style={displayAnimation}
-				className='flex justify-evenly my-10'
+				className='flex justify-center items-center my-10 p-2 py-10'
 			>
-				<Image
-					src={leftArrow}
-					alt='left arrow'
-					onClick={showPrevVideo}
-					className='flex cursor-pointer'
-				/>
+				<motion.div
+					initial={{ opacity: 1 }}
+					animate={{ opacity: leftArrowClicked ? 0 : 1 }}
+					transition={{ duration: 0.5 }}
+				>
+					<Image
+						src={leftArrow}
+						alt='left arrow'
+						onClick={showPrevVideo}
+						className='flex cursor-pointer'
+					/>
+				</motion.div>
 				<AnimatePresence initial={false}>
 					<motion.div
 						key={currentIndex}
-						initial={{ opacity: 0, x: 100 }}
+						initial={{ opacity: 1, x: 0 }}
 						animate={{ opacity: 1, x: 0 }}
-						exit={{ opacity: 0, x: -100 }}
-						transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-						className='flex'
+						exit={{ opacity: 1, x: 0 }}
+						transition={{
+							duration: 0.5,
+							type: 'spring',
+						}}
 					>
-						{[
-							videos[currentIndex],
-							videos[(currentIndex + 1) % videos.length],
-						].map((video, index) => (
-							<div key={index} className='px-2 mx-2'>
+						{[videos[currentIndex]].map((video, index) => (
+							<div key={index} className='mx-1'>
 								<iframe
-									width='360'
-									height='215'
+									className='w-[180px] h-[200px] sm:w-[220px] sm:h-[180px] md:w-[460px] md:h-[315px]'
 									src={video}
 									title='YouTube video player'
 									frameBorder='0'
@@ -75,13 +90,18 @@ export default function Carousel() {
 						))}
 					</motion.div>
 				</AnimatePresence>
-
-				<Image
-					src={rightArrow}
-					alt='right arrow'
-					onClick={showNextVideo}
-					className='flex cursor-pointer'
-				/>
+				<motion.div
+					initial={{ opacity: 1 }}
+					animate={{ opacity: rightArrowClicked ? 0 : 1 }}
+					transition={{ duration: 0.5 }}
+				>
+					<Image
+						src={rightArrow}
+						alt='right arrow'
+						onClick={showNextVideo}
+						className='flex cursor-pointer'
+					/>
+				</motion.div>
 			</motion.div>
 		</>
 	);
