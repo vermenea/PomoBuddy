@@ -64,32 +64,21 @@ export default function Carousel() {
 						className='flex cursor-pointer'
 					/>
 				</motion.div>
-				<AnimatePresence initial={false}>
-					<motion.div
-						key={currentIndex}
-						initial={{ opacity: 1, x: 0 }}
-						animate={{ opacity: 1, x: 0 }}
-						exit={{ opacity: 1, x: 0 }}
-						transition={{
-							duration: 0.5,
-							type: 'spring',
-						}}
-					>
-						{[videos[currentIndex]].map((video, index) => (
-							<div key={index} className='mx-1'>
-								<iframe
-									className='w-[180px] h-[200px] sm:w-[220px] sm:h-[180px] md:w-[460px] md:h-[315px]'
-									src={video}
-									title='YouTube video player'
-									frameBorder='0'
-									allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-									referrerPolicy='strict-origin-when-cross-origin'
-									allowFullScreen
-								></iframe>
-							</div>
-						))}
-					</motion.div>
-				</AnimatePresence>
+
+				{[videos[currentIndex]].map((video, index) => (
+					<div key={index} className='mx-1'>
+						<iframe
+							className='w-[180px] h-[200px] sm:w-[220px] sm:h-[180px] md:w-[460px] md:h-[315px]'
+							src={video}
+							title='YouTube video player'
+							frameBorder='0'
+							allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+							referrerPolicy='strict-origin-when-cross-origin'
+							allowFullScreen
+						></iframe>
+					</div>
+				))}
+
 				<motion.div
 					initial={{ opacity: 1 }}
 					animate={{ opacity: rightArrowClicked ? 0 : 1 }}
