@@ -44,7 +44,7 @@ Although due to developement it's not always working:3
 - TypeScript
 - Tailwind CSS
 - LocalStorage
-- Firebase (coming soon)
+- Firebase
 - Framer-motion 
 
 ## Future Plans
