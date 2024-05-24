@@ -13,7 +13,7 @@ PomoBuddy serves a significant purpose for me and my college friends. As student
 - **Short and Long Breaks**
 - **Task Tracking**
 - **Music**: (Coming Soon)
-- **Login**: (Coming Soon)
+- **Log in to your google account**: 
 - **Scientific resources**
   
 ## Installation
@@ -44,7 +44,7 @@ Although due to developement it's not always working:3
 - TypeScript
 - Tailwind CSS
 - LocalStorage
-- Firebase
+- Firebase auth
 - Framer-motion 
 
 ## Future Plans
