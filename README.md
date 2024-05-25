@@ -12,8 +12,7 @@ PomoBuddy serves a significant purpose for me and my college friends. As student
 - **Pomodoro Timer**
 - **Short and Long Breaks**
 - **Task Tracking**
-- **Music**: (Coming Soon)
-- **Log in to your google account**: 
+- **Log in to your google account**
 - **Scientific resources**
   
 ## Installation
@@ -52,9 +51,8 @@ Although due to developement it's not always working:3
 PomoBuddy is still under development, and new features will be added in future updates:
 
 - Music integration to enhance focus during study sessions.
-- User authentication for personalized task tracking.
 - Additional study methods for different productivity techniques.
-- Animations - framer motion
+- ...and more
 
 ## Contribution
 
