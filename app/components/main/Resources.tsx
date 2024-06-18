@@ -3,6 +3,7 @@
 import Header from './Header';
 import TextComponent from './TextComponent';
 import Carousel from './Carousel';
+import Link from 'next/link';
 
 export default function Resources() {
 	return (
@@ -16,6 +17,13 @@ export default function Resources() {
 						below.
 					</TextComponent>
 					<Carousel />
+					<TextComponent>
+					 I can also recommend listening to music because it can lower stress levels, create a more relaxed study environment, help maintain concentration by blocking out distractions, aid in better information retention with a steady rhythm, improve your mood making studying more enjoyable, boost motivation and productivity with energizing tunes, and establish a consistent study routine.
+					</TextComponent>
+<div className='flex justify-center p-10'>
+<Link href="https://youtube.com/playlist?list=PLTgkrkz7Xh8egTB5okL8xzIWhd71NqiJV&si=2b4ZNjrRjUALXI1B" className='text-md rounded-md bg-slate-50 p-2 hover:bg-slate-200'><b className=''>StudyMusic ☕</b> - playlist created by me </Link>
+</div>
+				
 				</div>
 			</section>
 		</>
