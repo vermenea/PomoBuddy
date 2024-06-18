@@ -6,7 +6,7 @@ import ToStudy from './components/main/ToStudy';
 import Footer from './components/footer/Footer';
 import Resources from './components/main/Resources';
 
-function App() {
+function Home() {
 	return (
 		<>
 			<NavBar />
@@ -21,4 +21,4 @@ function App() {
 	);
 }
 
-export default App;
+export default Home;
