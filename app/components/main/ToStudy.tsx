@@ -63,10 +63,6 @@ const ToStudy: React.FC = () => {
 		});
 	};
 
-	useEffect(() => {
-		console.log('Element is in view: ', isInView);
-	}, [isInView]);
-
 	return (
 		<section className='font-Oswald max-w-4xl mx-auto p-10 md:px-16 lg:px-20 xl:px-20 scroll-smooth'>
 			<motion.header
@@ -90,8 +86,8 @@ const ToStudy: React.FC = () => {
 				}}
 			>
 				Hi <strong className='text-red-500'>{session?.data?.user?.name}</strong> ! Let's begin study
-				session, add a new toStudy to the list, set estimated pomodoros that you
-				need to set for study, and mark ✅ if it's done.
+				session, add a new toStudy to the list, set estimated time in pomodoros that you
+				need for session, and mark ✅ if you're done.
 			</motion.p>
 
 			<motion.div
@@ -104,7 +100,7 @@ const ToStudy: React.FC = () => {
 			>
 				<input
 					type='text'
-					placeholder='Type here...'
+					placeholder='What are you studying 🧐?'
 					className='w-inherit m-5  overflow-hidden'
 					value={toStudyValue}
 					onChange={handleInput}
@@ -123,7 +119,7 @@ const ToStudy: React.FC = () => {
 				<ul className='flex flex-col align-center m-8 '>
 					{submittedToStudyValue.map((toStudy, index) => (
 						<li className='flex items-center m-2' key={index}>
-							{toStudy.value} ➡️ {toStudy.pomodoros} pomodoros
+							<strong>{toStudy.value} </strong> ➡️ {toStudy.pomodoros} pomodoros
 							<button
 								type='button'
 								className='ml-auto'
