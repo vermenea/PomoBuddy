@@ -3,23 +3,22 @@ import { useState, useRef, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 // import endSound from '../public/ring.mp3';
 // import startSound from '../public/start.wav';
-import BlackButton from './CreateToStudyButton';
-import { displayContent } from '../../animations/animations';
+import CreateToStudyButton from './CreateToStudyButton';
+import { displayContent } from '@/app/animations/animations';
 
 export default function Timer() {
 	const [time, setTime] = useState<string>('25:00');
 	const [isRunning, setIsRunning] = useState<boolean>(false);
 	const intervalIdRef = useRef<NodeJS.Timeout | null>(null);
+	const [isShortBreak, setIsShortBreak] = useState<boolean>(false);
+	const [isLongBreak, setIsLongBreak] = useState<boolean>(false);
 	// const endAudioRef = useRef<HTMLAudioElement>(new Audio('/ring.mp3'));
 	// const startAudioRef = useRef<HTMLAudioElement>(new Audio('/start.wav'));
 	const ref = useRef(null);
 	const isInView = useInView(ref, { once: true });
 	const displayAnimation = displayContent(isInView);
 
-	useEffect(() => {
-		console.log('Element is in view: ', isInView);
-	}, [isInView]);
-
+//setting time on window browser
 	useEffect(() => {
 		if (isRunning) {
 			document.title = time;
@@ -28,10 +27,33 @@ export default function Timer() {
 		}
 	}, [time, isRunning]);
 
+	useEffect(() => {
+		if (isShortBreak) {
+			const timeoutId = setTimeout(() => {
+				handleStop();
+				handleReturnTime();
+				setIsShortBreak(false);
+			}, 300000); 
+
+			return () => clearTimeout(timeoutId);
+		}
+	}, [isShortBreak]);
+
+	useEffect(() => {
+		if (isLongBreak) {
+			const timeoutId = setTimeout(() => {
+				handleReturnTime();
+				setIsLongBreak(false);
+			}, 900000); 
+
+			return () => clearTimeout(timeoutId);
+		}
+	}, [isLongBreak]);
+
+//time, start, stop calc
 	function handleStart() {
 		setIsRunning(true);
 		// startAudioRef.current.play();
-
 		const intervalId = setInterval(() => {
 			setTime((prevTime: string) => calculateTime(prevTime));
 		}, 1000);
@@ -48,7 +70,7 @@ export default function Timer() {
 			if (minutes === 0) {
 				setIsRunning(false);
 				clearInterval(intervalIdRef.current as NodeJS.Timeout);
-				return '05:00';
+				handleShortBreak();
 			}
 			seconds = 59;
 			minutes -= 1;
@@ -68,15 +90,25 @@ export default function Timer() {
 		clearInterval(intervalIdRef.current as NodeJS.Timeout);
 		intervalIdRef.current = null;
 	}
+
 	function handleReturnTime() {
 		setTime('25:00');
 	}
-
+//breaks
 	function handleShortBreak() {
 		setTime('05:00');
+		setIsRunning(false);
+		clearInterval(intervalIdRef.current as NodeJS.Timeout);
+		intervalIdRef.current = null;
+		setIsShortBreak(true);
 	}
+
 	function handleLongBreak() {
 		setTime('15:00');
+		setIsRunning(false);
+		clearInterval(intervalIdRef.current as NodeJS.Timeout);
+		intervalIdRef.current = null;
+		setIsLongBreak(true);
 	}
 
 	return (
@@ -98,7 +130,7 @@ export default function Timer() {
 							>
 								short break
 							</button>
-							<button onClick={handleReturnTime} className='text-xl'>
+							<button onClick={handleReturnTime} className='text-3xl'>
 								🔁
 							</button>
 							<button
@@ -108,7 +140,7 @@ export default function Timer() {
 								long break
 							</button>
 						</div>
-						<div className='font-bold p-5 font-vt323'>{time}</div>
+						<div className='font-bold p-5 font-oswald'>{time}</div>
 					</div>
 					<button
 						onClick={isRunning ? handleStop : handleStart}
@@ -117,7 +149,7 @@ export default function Timer() {
 						{isRunning ? 'stop' : 'start'}
 					</button>
 				</motion.div>
-				<BlackButton />
+				<CreateToStudyButton />
 			</div>
 		</>
 	);
