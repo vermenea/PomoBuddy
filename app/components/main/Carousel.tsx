@@ -66,9 +66,9 @@ export default function Carousel() {
 				</motion.div>
 
 				{[videos[currentIndex]].map((video, index) => (
-					<div key={index} className='mx-1'>
+					<div key={index} className=''>
 						<iframe
-							className='w-[180px] h-[200px] sm:w-[220px] sm:h-[180px] md:w-[460px] md:h-[315px]'
+							className='w-[215px] h-[200px] sm:w-[230px] sm:h-[180px] md:w-[460px] md:h-[315px]'
 							src={video}
 							title='YouTube video player'
 							frameBorder='0'
