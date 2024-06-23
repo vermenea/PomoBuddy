@@ -6,13 +6,13 @@ import { db } from '@/firebase';
 import { collection, addDoc, getDocs, deleteDoc, doc } from "firebase/firestore";
 
 interface ToStudyValue {
-	id?: string;
 	value: string;
 	pomodoros: number;
 }
 
 const ToStudy: React.FC = () => {
-	const session = useSession();
+	const {data: session} = useSession();
+	const userId = session?.user?.email;
 	const [toStudyValue, setToStudyValue] = useState<string>('');
 	const [estimatedPomodoros, setEstimatedPomodoros] = useState<number>(1);
 	const [submittedToStudyValue, setSubmittedToStudyValue] = useState<
@@ -30,6 +30,7 @@ const ToStudy: React.FC = () => {
 	};
 
 	const handleSubmit = async () => {
+		if (!userId) return;
 		if (toStudyValue.trim() !== '') {
 		  const newToStudy: ToStudyValue = {
 			value: toStudyValue,
@@ -37,10 +38,11 @@ const ToStudy: React.FC = () => {
 		  };
 	
 		  try {
-			const docRef = await addDoc(collection(db, "toStudies"), newToStudy);
-			setSubmittedToStudyValue([...submittedToStudyValue, { ...newToStudy, id: docRef.id }]);
-		  } catch (e) {
-			console.error("Error adding document: ", e);
+			const userCollection = collection(db, "users", userId, "toStudies");
+			await addDoc(userCollection, newToStudy);
+			setSubmittedToStudyValue([...submittedToStudyValue, newToStudy]);
+		  } catch (error) {
+			console.error("Error adding document: ", error);
 		  }
 		}
 		setToStudyValue('');
@@ -49,30 +51,34 @@ const ToStudy: React.FC = () => {
 
 	  useEffect(() => {
 		const fetchToStudies = async () => {
-		  const querySnapshot = await getDocs(collection(db, "toStudies"));
+		  if (!userId) return; 
+		  const userCollection = collection(db, "users", userId, "toStudies");
+		  const querySnapshot = await getDocs(userCollection);
 		  const toStudies: ToStudyValue[] = [];
 		  querySnapshot.forEach((doc) => {
-			toStudies.push({ ...doc.data(), id: doc.id } as ToStudyValue);
+			toStudies.push(doc.data() as ToStudyValue);
 		  });
 		  setSubmittedToStudyValue(toStudies);
 		};
 		fetchToStudies();
-	  }, []);
+	  }, [userId]);
 
 	  const handleCheckboxChange = async (index: number) => {
+		if (!userId) return;
 		const toStudyToDelete = submittedToStudyValue[index];
-		if (toStudyToDelete.id) {
-		  try {
-			await deleteDoc(doc(db, "toStudies", toStudyToDelete.id));
-			setSubmittedToStudyValue((prevToStudyValues) => {
-			  const updatedToStudyValues = [...prevToStudyValues];
-			  updatedToStudyValues.splice(index, 1);
-			  return updatedToStudyValues;
-			});
-		  } catch (e) {
-			console.error("Error deleting document: ", e);
+		const userCollection = collection(db, "users", userId, "toStudies");
+		const querySnapshot = await getDocs(userCollection);
+		querySnapshot.forEach(async (docSnapshot) => {
+		  if (docSnapshot.data().value === toStudyToDelete.value && docSnapshot.data().pomodoros === toStudyToDelete.pomodoros) {
+			await deleteDoc(doc(db, "users", userId, "toStudies", docSnapshot.id));
 		  }
-		}
+		});
+	
+		setSubmittedToStudyValue((prevToStudyValues) => {
+		  const updatedToStudyValues = [...prevToStudyValues];
+		  updatedToStudyValues.splice(index, 1);
+		  return updatedToStudyValues;
+		});
 	  };
 
 	return (
@@ -97,7 +103,7 @@ const ToStudy: React.FC = () => {
 					transition: '0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
 				}}
 			>
-				Hi <strong className='text-red-500'>{session?.data?.user?.name}</strong> ! Let's begin study
+				Hi <strong className='text-red-500'>{session?.user?.name}</strong> ! Let's begin study
 				session, add a new toStudy to the list, set estimated time in pomodoros that you
 				need for session, and mark ✅ if you're done.
 			</motion.p>
@@ -117,7 +123,7 @@ const ToStudy: React.FC = () => {
 					value={toStudyValue}
 					onChange={handleInput}
 				></input>
-				<div className='flex m-5'>
+				<div className='flex items-center justify-between m-5'>
 					<p>Estimated pomodoros:</p>
 					<input
 						type='number'
@@ -125,13 +131,18 @@ const ToStudy: React.FC = () => {
 						value={estimatedPomodoros}
 						onChange={handleEstimatedPomodorosChange}
 					></input>
+					<button
+					className='py-1.5 px-2 ml-auto bg-red-500 text-white rounded-md '
+					onClick={handleSubmit}
+				>
+					Add toStudy
+				</button>			
 				</div>
-
 				<hr className='border-2'></hr>
-				<ul className='flex flex-col align-center m-8 '>
+				<ul className='flex flex-col align-center m-5 '>
 					{submittedToStudyValue.map((toStudy, index) => (
-						<li className='flex items-center m-2' key={index}>
-							<strong>{toStudy.value} </strong> ➡️ {toStudy.pomodoros} pomodoros
+						<li className='flex items-center' key={index}>
+							<strong>{toStudy.value}</strong><p className='mx-4'>➡️</p><p>{toStudy.pomodoros} pomodoros</p>
 							<button
 								type='button'
 								className='ml-auto'
@@ -142,12 +153,6 @@ const ToStudy: React.FC = () => {
 						</li>
 					))}
 				</ul>
-				<button
-					className='bg-red-500 text-white rounded-md py-2 px-2 w-fit ml-auto m-5'
-					onClick={handleSubmit}
-				>
-					Add toStudy
-				</button>
 			</motion.div>
 		</section>
 	);
