@@ -2,8 +2,11 @@
 import { ChangeEvent, useEffect, useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { useSession } from 'next-auth/react';
+import { db } from '@/firebase';
+import { collection, addDoc, getDocs, deleteDoc, doc } from "firebase/firestore";
 
 interface ToStudyValue {
+	id?: string;
 	value: string;
 	pomodoros: number;
 }
@@ -26,42 +29,51 @@ const ToStudy: React.FC = () => {
 		setEstimatedPomodoros(parseInt(e.target.value, 10) || 1);
 	};
 
-	const handleSubmit = () => {
+	const handleSubmit = async () => {
 		if (toStudyValue.trim() !== '') {
-			const newToStudy: ToStudyValue = {
-				value: toStudyValue,
-				pomodoros: estimatedPomodoros,
-			};
-
-			setSubmittedToStudyValue([...submittedToStudyValue, newToStudy]);
-			localStorage.setItem(
-				'savedToStudies',
-				JSON.stringify([...submittedToStudyValue, newToStudy])
-			);
+		  const newToStudy: ToStudyValue = {
+			value: toStudyValue,
+			pomodoros: estimatedPomodoros,
+		  };
+	
+		  try {
+			const docRef = await addDoc(collection(db, "toStudies"), newToStudy);
+			setSubmittedToStudyValue([...submittedToStudyValue, { ...newToStudy, id: docRef.id }]);
+		  } catch (e) {
+			console.error("Error adding document: ", e);
+		  }
 		}
 		setToStudyValue('');
 		setEstimatedPomodoros(1);
-	};
+	  };
 
-	useEffect(() => {
-		const savedToStudies = localStorage.getItem('savedToStudies');
-		if (savedToStudies !== null) {
-			const storedToStudies: ToStudyValue[] = JSON.parse(savedToStudies);
-			setSubmittedToStudyValue(storedToStudies);
+	  useEffect(() => {
+		const fetchToStudies = async () => {
+		  const querySnapshot = await getDocs(collection(db, "toStudies"));
+		  const toStudies: ToStudyValue[] = [];
+		  querySnapshot.forEach((doc) => {
+			toStudies.push({ ...doc.data(), id: doc.id } as ToStudyValue);
+		  });
+		  setSubmittedToStudyValue(toStudies);
+		};
+		fetchToStudies();
+	  }, []);
+
+	  const handleCheckboxChange = async (index: number) => {
+		const toStudyToDelete = submittedToStudyValue[index];
+		if (toStudyToDelete.id) {
+		  try {
+			await deleteDoc(doc(db, "toStudies", toStudyToDelete.id));
+			setSubmittedToStudyValue((prevToStudyValues) => {
+			  const updatedToStudyValues = [...prevToStudyValues];
+			  updatedToStudyValues.splice(index, 1);
+			  return updatedToStudyValues;
+			});
+		  } catch (e) {
+			console.error("Error deleting document: ", e);
+		  }
 		}
-	}, []);
-
-	const handleCheckboxChange = (index: number) => {
-		setSubmittedToStudyValue((prevToStudyValues) => {
-			const updatedToStudyValues = [...prevToStudyValues];
-			updatedToStudyValues.splice(index, 1);
-			localStorage.setItem(
-				'savedToStudies',
-				JSON.stringify(updatedToStudyValues)
-			);
-			return updatedToStudyValues;
-		});
-	};
+	  };
 
 	return (
 		<section className='font-Oswald max-w-4xl mx-auto p-10 md:px-16 lg:px-20 xl:px-20 scroll-smooth'>
