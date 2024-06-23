@@ -20,9 +20,11 @@ const ToStudy: React.FC = () => {
 	>([]);
 	const ref = useRef(null);
 	const isInView = useInView(ref, { once: true });
+	const [error, setError] = useState<string | null>(null)
 
 	const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
 		setToStudyValue(e.target.value);
+		setError('')
 	};
 
 	const handleEstimatedPomodorosChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -30,7 +32,10 @@ const ToStudy: React.FC = () => {
 	};
 
 	const handleSubmit = async () => {
-		if (!userId) return;
+		if (!userId) {
+			setError('User not authenticated')
+			return
+		}
 		if (toStudyValue.trim() !== '') {
 		  const newToStudy: ToStudyValue = {
 			value: toStudyValue,
@@ -43,10 +48,14 @@ const ToStudy: React.FC = () => {
 			setSubmittedToStudyValue([...submittedToStudyValue, newToStudy]);
 		  } catch (error) {
 			console.error("Error adding document: ", error);
+			setError('Error adding document: ' + error);
 		  }
+		} else {
+			setError('Please enter a valid toStudy')
 		}
 		setToStudyValue('');
 		setEstimatedPomodoros(1);
+		
 	  };
 
 	  useEffect(() => {
@@ -138,6 +147,7 @@ const ToStudy: React.FC = () => {
 					Add toStudy
 				</button>			
 				</div>
+				{error && <p className='text-red-500 text-sm  m-5'>{error}</p>} 
 				<hr className='border-2'></hr>
 				<ul className='flex flex-col align-center m-5 '>
 					{submittedToStudyValue.map((toStudy, index) => (
