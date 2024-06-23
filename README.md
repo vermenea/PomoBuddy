@@ -31,7 +31,7 @@ Once the app is running, you can:
 - Set Pomodoro sessions by entering a task and clicking "Start".
 - Take short or long breaks between study sessions.
 - Track your tasks in the toStudy list.
-
+- Play some music to enhance focus 😎
 ## Live Demo
 
 A live demo of PomoBuddy is available [here](https://your-pomo-buddy.vercel.app/).
@@ -42,9 +42,10 @@ Although due to developement it's not always working:3
 - Next.js
 - TypeScript
 - Tailwind CSS
-- LocalStorage
-- Firebase auth
 - Framer-motion 
+- Firebase auth
+- Firebase cloud storage
+
 
 ## Future Plans
 
