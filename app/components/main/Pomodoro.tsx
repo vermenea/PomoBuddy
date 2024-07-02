@@ -23,7 +23,7 @@ const Pomodoro: React.FC = () => {
 			id='pomodoro'
 			className='font-Oswald max-w-4xl mx-auto p-10 md:px-16 lg:px-20 xl:px-20 scroll-smooth'
 		>
-			<Header title='what is a pomorodo?' />
+			<Header title='what is pomodoro?' />
 			<TextComponent>
 				The Pomodoro Technique is a time management method developed by
 				Francesco Cirillo in the late 1980s. The technique is named after the
