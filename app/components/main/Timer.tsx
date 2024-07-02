@@ -130,8 +130,8 @@ export default function Timer() {
 							>
 								short break
 							</button>
-							<button onClick={handleReturnTime} className='text-3xl'>
-								🔁
+							<button onClick={handleReturnTime} className='uppercase text-white border-none bg-zinc-800 bg-opacity-60 transition-all hover:bg-opacity-100 shadow-lg rounded-md py-2 px-6 m-2'>
+								reset
 							</button>
 							<button
 								onClick={handleLongBreak}
