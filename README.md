@@ -1,4 +1,10 @@
+<div align="center">
+
 # PomoBuddy 🍅
+
+<img src="https://github.com/vermenea/PomoBuddy/blob/master/public/images/image.png?raw=true" alt="PomoBuddy">
+
+</div>
 
 ## Overview
 
