@@ -141,13 +141,16 @@ const ToStudy: React.FC = () => {
 					onChange={handleInput}
 				></input>
 				<div className='flex justify-between items-center m-5 text-sm md:text-md lg:text-xl'>
+					<div className='flex justify-center items-center'>
 					<p>Estimated pomodoros:</p>
 					<input
 						type='number'
-						className='w-6 text-right text-red-500'
+						className='w-12 mx-2 text-right text-red-500'
 						value={estimatedPomodoros}
 						onChange={handleEstimatedPomodorosChange}
 					></input>
+					</div>
+					
 					<button
 						className='py-1.5 px-1  bg-red-500 text-white rounded-md '
 						onClick={handleSubmit}
