@@ -9,9 +9,7 @@ const TextComponent: React.FC<{ children: React.ReactNode }> = ({
 	const isInView = useInView(ref, { once: true });
 	const textAnimation = slideAnimation(isInView);
 
-	useEffect(() => {
-		console.log('Element is in view: ', isInView);
-	}, [isInView]);
+	
 
 	return (
 		<motion.p

@@ -14,9 +14,6 @@ const ImageComponent: React.FC<ImageProps> = ({ src, alt, align = 'left' }) => {
 	const isInView = useInView(ref, { once: true });
 	const displayAnimation = displayContent(isInView);
 
-	useEffect(() => {
-		console.log('Element is in view: ', isInView);
-	}, [isInView]);
 
 	const classes =
 		align === 'right'

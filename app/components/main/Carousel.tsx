@@ -10,9 +10,7 @@ export default function Carousel() {
 	const isInView = useInView(ref, { once: true });
 	const displayAnimation = displayContent(isInView);
 
-	useEffect(() => {
-		console.log('Element is in view: ', isInView);
-	}, [isInView]);
+
 
 	const videos = [
 		'https://www.youtube.com/embed/z7e7gtU3PHY?si=I_DUPRbfWRdzkE_h',

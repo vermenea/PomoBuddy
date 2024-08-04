@@ -14,9 +14,7 @@ const Pomodoro: React.FC = () => {
 	const isInView = useInView(ref, { once: true });
 	const stepAnimation = slideAnimation(isInView);
 
-	useEffect(() => {
-		console.log('Element is in view: ', isInView);
-	}, [isInView]);
+	
 
 	return (
 		<section
