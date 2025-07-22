@@ -1,16 +1,14 @@
 import Image from 'next/image';
 import rightArrow from '../../../public/images/arrow-badge-right.svg';
 import leftArrow from '../../../public/images/arrow-badge-left.svg';
-import { useEffect, useRef, useState } from 'react';
-import { AnimatePresence, motion, useInView } from 'framer-motion';
+import { useRef, useState } from 'react';
+import { motion, useInView } from 'framer-motion';
 import { displayContent } from '@/app/animations/animations';
 
 export default function Carousel() {
 	const ref = useRef(null);
 	const isInView = useInView(ref, { once: true });
 	const displayAnimation = displayContent(isInView);
-
-
 
 	const videos = [
 		'https://www.youtube.com/embed/z7e7gtU3PHY?si=I_DUPRbfWRdzkE_h',
@@ -30,7 +28,7 @@ export default function Carousel() {
 			setCurrentIndex((prevIndex) =>
 				prevIndex === 0 ? videos.length - 1 : prevIndex - 1
 			);
-		}, 500); // Duration of the opacity animation
+		}, 500); 
 	}
 
 	function showNextVideo() {
@@ -40,7 +38,7 @@ export default function Carousel() {
 			setCurrentIndex((prevIndex) =>
 				prevIndex === videos.length - 1 ? 0 : prevIndex + 1
 			);
-		}, 500); // Duration of the opacity animation
+		}, 500); 
 	}
 
 	return (

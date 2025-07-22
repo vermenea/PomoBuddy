@@ -14,8 +14,6 @@ const Pomodoro: React.FC = () => {
 	const isInView = useInView(ref, { once: true });
 	const stepAnimation = slideAnimation(isInView);
 
-	
-
 	return (
 		<section
 			id='pomodoro'

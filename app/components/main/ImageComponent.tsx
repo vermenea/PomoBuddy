@@ -1,13 +1,8 @@
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { displayContent } from '../../animations/animations';
 import Image from 'next/image';
-
-type ImageProps = {
-	src: any;
-	alt: string;
-	align?: 'left' | 'right';
-};
+import { ImageProps } from '@/types/types';
 
 const ImageComponent: React.FC<ImageProps> = ({ src, alt, align = 'left' }) => {
 	const ref = useRef(null);

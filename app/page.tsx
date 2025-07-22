@@ -1,4 +1,5 @@
 'use client';
+
 import Timer from './components/main/Timer';
 import NavBar from './components/nav/NavBar';
 import Pomodoro from './components/main/Pomodoro';

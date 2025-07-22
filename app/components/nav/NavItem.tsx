@@ -1,8 +1,4 @@
-interface NavItemProps {
-  href: string
-  text: string
-  icon?: React.ReactNode
-}
+import { NavItemProps } from "@/types/types"
 
 const NavItem: React.FC<NavItemProps> = ({ href, text, icon }) => {
   return (

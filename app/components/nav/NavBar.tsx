@@ -41,7 +41,6 @@ export default function NavBar() {
 					</button>
 				</ul>
 			</div>
-			{/* MobileNav */}
 			{isOpen && (
 				<div className='md:hidden mt-2'>
 					<ul className='flex flex-col items-center'>
